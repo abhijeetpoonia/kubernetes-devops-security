@@ -8,7 +8,7 @@ pipeline {
                 archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
             }
         }
-        stage('unit-Test') { // Corrected stage name
+        stage('unit-Test') { // Corrected stage 
             steps {
                 sh "mvn test"
             }
