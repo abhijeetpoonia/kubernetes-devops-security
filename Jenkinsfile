@@ -33,7 +33,7 @@ pipeline {
             steps {
                 withKubeConfig([credentialsId: 'kubeconfig']) {
                     sh """
-                        sed -i 's#replace#abhijeetsingh1/numeric-app:${env.GIT_COMMIT}#g' k8s_deployment_service.yadı
+                        sed -i 's#replace#abhijeetsingh1/numeric-app:${env.GIT_COMMIT}#g' k8s_deployment_service.yaml
                         kubectl apply -f k8s_deployment_service.yaml
                     """
                 }
