@@ -21,7 +21,7 @@ pipeline {
         stage('Docker Build and Push') {
             steps {
                 script {
-                    withDockerRegistry([credentialsId: "dockerhub", url:"**"]) {
+                    withDockerRegistry([credentialsId: "dockerhub", url: "https://index.docker.io/v1/"]) {
                         sh "docker build -t abhijeetsingh1/numeric-app:${env.GIT_COMMIT} ."
                         sh "docker push abhijeetsingh1/numeric-app:${env.GIT_COMMIT}"
                     }
